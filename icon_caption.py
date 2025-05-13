@@ -407,7 +407,7 @@ def get_captions(croped_pil_images, resnet_model, florence_model, florence_proce
     def extract_embedding(resnet50, images_tensor):
         with torch.no_grad():
             embedding = resnet50(images_tensor).squeeze(-1).squeeze(-1)
-        return embedding.numpy()
+        return embedding.cpu().numpy()
 
     def find_cached_captions(batch_embeddings, index, caption_cache, similarity_threshold=0.8):
         """Search cache for similar embeddings and return cached captions"""
