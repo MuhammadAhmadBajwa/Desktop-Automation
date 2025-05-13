@@ -532,7 +532,7 @@ def get_parsed_icons_captions(
     # Extract Icons Descriptions with an ID 
     icon_descriptions = '\n'.join([f'icon{i}:{str(v['content'])} ' for i,v in enumerate(parsed_content_list)])
 
-    return icon_coordinates , icon_descriptions
+    return encoded_image, icon_coordinates , icon_descriptions
     
 
 def load_resnet_model(resnet_path):
