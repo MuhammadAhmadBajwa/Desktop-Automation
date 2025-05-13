@@ -26,6 +26,7 @@ from torchvision.models import resnet50
 import faiss
 import pickle
 
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 def get_xywh(input):
     x, y, w, h = input[0][0], input[0][1], input[2][0] - input[0][0], input[2][1] - input[0][1]
@@ -452,7 +453,7 @@ def get_captions(croped_pil_images, resnet_model, florence_model, florence_proce
     # Convert PIL images to tensors
     transform = transforms.ToTensor()
     tensor_images = [transform(img) for img in croped_pil_images]
-    batch_tensor = torch.stack(tensor_images)
+    batch_tensor = torch.stack(tensor_images).to(device)
 
     # Extract and normalize embeddings
     batch_embeddings = extract_embedding(resnet_model, batch_tensor)
