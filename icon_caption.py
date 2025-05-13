@@ -530,7 +530,7 @@ def get_parsed_icons_captions(
     icon_coordinates = [item['bbox'] for item in parsed_content_list]
 
     # Extract Icons Descriptions with an ID 
-    icon_descriptions = '\n'.join([f'icon{i}:{str(v['content'])} ' for i,v in enumerate(parsed_content_list)])
+    icon_descriptions = '\n'.join([f"icon{i}:{str(v['content'])}" for i,v in enumerate(parsed_content_list)])
 
     return encoded_image, icon_coordinates , icon_descriptions
     
