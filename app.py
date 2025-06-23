@@ -186,7 +186,8 @@ if __name__ == "__main__":
                     speak("Goodbye!")
                     break
                 else:
-                    task = 'currently iam on desktop which have google chrome icon , open google chrome , google chrome will open you will see two profiles choose Muhammad Ahmad profile , go to google classroom icon is alredy in shortcut so when you will open chrome you will click on classroom icon , after that go to internet of things classroom '
+                    # task = 'currently iam on desktop which have google chrome icon , open google chrome , google chrome will open you will see two profiles choose Muhammad Ahmad profile , go to google classroom icon is alredy in shortcut so when you will open chrome you will click on classroom icon , after that go to internet of things classroom '
+                    task = user_command
                     steps = Generate_Steps(task,groq_api)
                     print(steps)
                     # encoded_image = None
